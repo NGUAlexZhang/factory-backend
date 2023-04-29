@@ -3,11 +3,12 @@ const bodyParser = require('body-parser')
 const cors=require('cors')
 const customers = require('./routes/customers')
 const commodity = require('./routes/commodities')
+const staff=require('./routes/staff')
 const app = express()
 app.use(cors())
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 app.use('/api/v1/customers', customers)
 app.use('/api/v1/commodities', commodity)
-
+app.use('/api/v1/staff',staff)
 module.exports = app
